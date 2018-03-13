@@ -1,4 +1,5 @@
-#MULTIPLE LOCUS VARIABLE NUMBER TANDEM REPEAT SEARCH 06/27/2017
+#WHOLE GENOME SEQUENCE MULTIPLE LOCUS VARIABLE NUMBER TANDEM REPEAT SEARCH 
+#last edit: 03/13/2018
 
 #Imported Modules.
 import sys
@@ -22,11 +23,13 @@ parser.add_argument('-v', '--version', action = 'version', \
 parser.add_argument('-n', '--name', required = False, \
 					help = 'Assign file name. If not assigned it will use \
 							the file name of the fasta file.')
+parser.add_argument('-u', '--unmask', action = "store_true", default= False)
 args = parser.parse_args()
 inFile = args.inputFile
 outDir = args.outputDir
 mlvaDir = os.path.dirname(os.path.realpath(sys.argv[0]))
 sampleID = args.name
+fix = args.unmask
 
 #------------------------------------------------------------------------------
 #Check parsed arguments
@@ -51,10 +54,13 @@ def quiet():
 if sampleID:
 	name = sampleID
 else:	
-	pullName = inFile.rsplit('/', 1)[1]
-	name = pullName.split('.', 1)[0]
-outFile = name + "_fasta_out"
-outSummary = name + "_summary"
+	#pullName = inFile.rsplit('/', 1)[1]
+	print inFile
+	prepName = re.findall("(\w\d\d\d)",inFile)
+	name = prepName[0]
+	#pullName.split('.', 1)[0]
+	outFile = name + "fasta_out"
+	outSummary = name + "summary"
 #------------------------------------------------------------------------------
 #Create "MLVA" directory to hold results, creates directory in MLVA to hold
 #each isolate.
@@ -283,17 +289,17 @@ def VNTR3_search(p1s, p1e, p2s, p2e, r1, r2):
 			fDistance2 = V3_end_2 - V3_start_2
 			fragment1 = all_dna[V3_start_1:V3_end_1]
 			fragment2 = all_dna[V3_start_2:V3_end_2]
-			print >>seq, ">%s" % ("VNTR3_1"), "\n" + fragment1
-			print >>seq, ">%s" % ("VNTR3_2"), "\n" + fragment2
-			print >>q, "\n >>> VNTR3_1" + "\n"
-			print >>q, "VNTR3_1 Fragment locus:", V3_start_1, "-", V3_end_1
-			print >>q, "VNTR3_1 fragment size:", fDistance1
+			print >>seq, ">%s" % ("VNTR3a"), "\n" + fragment1
+			print >>seq, ">%s" % ("VNTR3b"), "\n" + fragment2
+			print >>q, "\n >>> VNTR3a" + "\n"
+			print >>q, "VNTR3a Fragment locus:", V3_start_1, "-", V3_end_1
+			print >>q, "VNTR3a fragment size:", fDistance1
 			print >>q, "\n >>> VNTR3_2" + "\n"
-			print >>q, "VNTR3_2 Fragment locus:", V3_start_2, "-", V3_end_2
-			print >>q, "VNTR3_2 fragment size:", fDistance2
+			print >>q, "VNTR3b Fragment locus:", V3_start_2, "-", V3_end_2
+			print >>q, "VNTR3b fragment size:", fDistance2
 			vntr_count1 = fragment1.count(r1) or fragment1.count(r2)
 			vntr_count2 = fragment2.count(r1) or fragment2.count(r2)
-			if vntr_count1 == vntr_count2:
+			if vntr_count1 == vntr_count2 and fix == False:
 				MLVA_code.append(vntr_count1)
 				MLVA_code.append(0)
 			elif vntr_count1 < vntr_count2:
@@ -310,12 +316,12 @@ def VNTR3_search(p1s, p1e, p2s, p2e, r1, r2):
 			fragment = all_dna[V3_start_single_1:V3_end_single_1]
 			print >>seq, ">%s" % ("VNTR3_1"), "\n" + fragment
 			print >>q, "\n >>> VNTR3_1" + "\n"
-			print >>q, "VNTR3_1 Fragment locus:", V3_start_single_1, "-",\
+			print >>q, "VNTR3a Fragment locus:", V3_start_single_1, "-",\
 			V3_end_single_1
-			print >>q, "VNTR3_1 fragment size:", fDistance
+			print >>q, "VNTR3a fragment size:", fDistance
 			print >>q, "\n >>> VNTR3_2" + "\n"
-			print >>q, "VNTR3_2 Fragment locus: 0"
-			print >>q, "VNTR3_2 fragment size: 0"
+			print >>q, "VNTR3b Fragment locus: 0"
+			print >>q, "VNTR3b fragment size: 0"
 			vntr_count1 = fragment.count(r1) or fragment.count(r2)
 			MLVA_code.append(vntr_count1)
 			MLVA_code.append(0)
@@ -348,17 +354,17 @@ def VNTR3_search(p1s, p1e, p2s, p2e, r1, r2):
 			fragment1rev = rev_text1[::-1]
 			fragment2rev = rev_text2[::-1]
 
-			print >>seq, ">%s" % ("VNTR3_1"), "\n" + fragment1rev
-			print >>seq, ">%s" % ("VNTR3_2"), "\n" + fragment2rev
-			print >>q, "\n >>> VNTR3_1" + "\n"
-			print >>q, "VNTR3_1 Fragment locus:", V3_start_1, "-", V3_end_1
-			print >>q, "VNTR3_1 fragment size:", fDistance1
+			print >>seq, ">%s" % ("VNTR3a"), "\n" + fragment1rev
+			print >>seq, ">%s" % ("VNTR3b"), "\n" + fragment2rev
+			print >>q, "\n >>> VNTR3a" + "\n"
+			print >>q, "VNTR3a Fragment locus:", V3_start_1, "-", V3_end_1
+			print >>q, "VNTR3a fragment size:", fDistance1
 			print >>q, "\n >>> VNTR3_2" + "\n"
-			print >>q, "VNTR3_2 Fragment locus:", V3_start_2, "-", V3_end_2
-			print >>q, "VNTR3_2 fragment size:", fDistance2
+			print >>q, "VNTR3b Fragment locus:", V3_start_2, "-", V3_end_2
+			print >>q, "VNTR3b fragment size:", fDistance2
 			vntr_count1 = fragment1rev.count(r1) or fragment1rev.count(r2)
 			vntr_count2 = fragment2rev.count(r2) or fragment2rev.count(r2)
-			if vntr_count1 == vntr_count2:
+			if vntr_count1 == vntr_count2 and fix == False:
 				MLVA_code.append(vntr_count1)
 				MLVA_code.append(0)
 			elif vntr_count1 < vntr_count2:
@@ -378,14 +384,14 @@ def VNTR3_search(p1s, p1e, p2s, p2e, r1, r2):
 			rev_text1 = pattern.sub(lambda m: replace[re.escape(m.group(0))], fragment)
 			fragment_rev = rev_text1[::-1]
 
-			print >>seq, ">%s" % ("VNTR3_1"), "\n" + fragment_rev
-			print >>q, "\n >>> VNTR3_1" + "\n"
-			print >>q, "VNTR3_1 Fragment locus:", V3_start_single_2, "-",\
+			print >>seq, ">%s" % ("VNTR3a"), "\n" + fragment_rev
+			print >>q, "\n >>> VNTR3a" + "\n"
+			print >>q, "VNTR3a Fragment locus:", V3_start_single_2, "-",\
 			V3_end_single_2
-			print >>q, "VNTR3_1 fragment size:", rDistance
-			print >>q, "\n >>> VNTR3_2" + "\n"
-			print >>q, "VNTR3_2 Fragment locus: 0"
-			print >>q, "VNTR3_2 fragment size: 0"
+			print >>q, "VNTR3a fragment size:", rDistance
+			print >>q, "\n >>> VNTR3b" + "\n"
+			print >>q, "VNTR3b Fragment locus: 0"
+			print >>q, "VNTR3b fragment size: 0"
 			vntr_count2 = fragment_rev.count(r1) or fragment_rev.count(r2)
 			MLVA_code.append(vntr_count2)
 			MLVA_code.append(0)
@@ -420,16 +426,16 @@ def VNTR3_search(p1s, p1e, p2s, p2e, r1, r2):
 		rev_text2 = pattern.sub(lambda m: replace[re.escape(m.group(0))], fragment2)
 		fragment2rev = rev_text2[::-1]
 
-		print >>seq, ">%s" % ("VNTR3_1"), "\n" + fragment2rev
-		print >>q, "\n >>> VNTR3_1" + "\n"
-		print >>q, "VNTR3_1 Fragment locus:", V3_start_1, "-", V3_end_1
-		print >>q, "VNTR3_1 fragment size:", fDistance
-		print >>q, "\n >>> VNTR3_2" + "\n"
-		print >>q, "VNTR3_2 Fragment locus:", V3_start_2, "-", V3_end_2
-		print >>q, "VNTR3_2 fragment size:", rDistance
+		print >>seq, ">%s" % ("VNTR3a"), "\n" + fragment2rev
+		print >>q, "\n >>> VNTR3a" + "\n"
+		print >>q, "VNTR3a Fragment locus:", V3_start_1, "-", V3_end_1
+		print >>q, "VNTR3a fragment size:", fDistance
+		print >>q, "\n >>> VNTR3b" + "\n"
+		print >>q, "VNTR3b Fragment locus:", V3_start_2, "-", V3_end_2
+		print >>q, "VNTR3b fragment size:", rDistance
 		vntr_count1 = fragment1.count(r1) or fragment1.count(r2)
 		vntr_count2 = fragment2.count(r1) or fragment2.count(r2)
-		if vntr_count1 == vntr_count2:
+		if vntr_count1 == vntr_count2 and fix == False:
 			MLVA_code.append(vntr_count1)
 			MLVA_code.append(0)
 		elif vntr_count1 < vntr_count2:
