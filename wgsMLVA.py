@@ -18,7 +18,7 @@ parser.add_argument('-i', '--inputFile', required = True , \
 parser.add_argument('-o', '--outputDir', required = True, \
 					help = 'MLVA output directory. Required.')
 parser.add_argument('-v', '--version', action = 'version', \
-					version = '%(prog)s version 1.0')
+					version = '%(prog)s v0.1')
 parser.add_argument('-n', '--name', required = False, \
 					help = 'Assign file name. If not assigned it will use \
 							the file name of the fasta file.')
