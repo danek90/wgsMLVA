@@ -1,13 +1,13 @@
-whole genome sequence MLVA Program (wgsMLVA) version 1.0
+### whole genome sequence MLVA Program (wgsMLVA) version 1.0
 Created by Dane Kania
 03/13/2018
 
----What is this?---
+#### ---What is this?---
 
 The whole genome sequence Multiple Locus Variable Number Tandem Repeat Program (wgsMLVA) aims to recreate PCR-based MLVA typing using closed Bordetella pertussis genomes. It is currently limited to closed B. pertussis genomes with future plans to expand to draft genomes.
 
 
----How does it work?---
+#### ---How does it work?---
 
 The program identifies six primer sites, labeled Variable Number Tandem Repeat (VNTR) sites, that each hold a set number of repeats. Each VNTR site has a unique, repeated DNA element that is counted by the program. This is done with all six VNTR sites, creating a list, similar to a barcode. wgsMLVA compares the specific list of VNTR counts to a database of possible MLVA types (included in this git page as MLVAdatabase.txt) and prints out the corrisponding MLVA type. 
 
@@ -20,7 +20,7 @@ MLVA type = [VNTR1, VNTR3a, VNTR3b, VNTR4, VNTR5, VNTR6]
 27 = [8, 7, 0, 7, 6, 7]
 
 
----How do I run wgsMLVA?---
+#### ---How do I run wgsMLVA?---
 
 Example: 
 
@@ -53,7 +53,7 @@ summary file (summary.txt). MLVA output data is in "MLVA data" and raw sequence 
 site is stored in "sequence data"
 
  
----Caveats and future work---
+#### ---Caveats and future work---
 
 Traditional PCR MLVA is a less accurate than wgsMLVA. It estimates the number of repeats in each VNTR site by molecular weight, with larger PCR products having more repeats than smaller ones. This makes matching wgsMLVA and PCR MLVA difficult at times. Here are a list of various points of conflicts I have encountered developing wgsMLVA v1.0 and the remedies I have used. this list will update overtime as I find new issues and fix old ones.
 
