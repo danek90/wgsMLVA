@@ -53,6 +53,8 @@ else:
 #Variable "name" changes the name of the files and directories created.
 if sampleID:
 	name = sampleID
+	outFile = name + "fasta_out"
+	outSummary = name + "summary"
 else:	
 	name = re.findall("(\w\d\d\d)",inFile)[0]
 	outFile = name + "fasta_out"
@@ -64,7 +66,8 @@ if not os.path.exists("%s/MLVA" % outDir):
 	os.mkdir("%s/MLVA" % outDir)
 if not os.path.exists("%s/MLVA/summary.txt" % outDir):
 	with open("%s/MLVA/summary.txt" % outDir, "a") as summary:
-			summary.write("Isolate: MLVA_number [VNTR1, VNTR3a, VNTR3b, VNTR4, VNTR5, VNTR6]\n")	
+			summary.write(\
+			"Isolate: MLVA_number [VNTR1, VNTR3a, VNTR3b, VNTR4, VNTR5, VNTR6]\n")	
 if not os.path.exists("%s/MLVA/MLVA_data" % outDir):
 	os.mkdir("%s/MLVA/MLVA_data" % outDir)		
 if not os.path.exists("%s/MLVA/sequence_data" % outDir):

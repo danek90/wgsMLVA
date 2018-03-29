@@ -57,6 +57,8 @@ wgsMLVA arguments:
 
 -v or --version : Program Version		
 		Prints out the program verion to terminal.	
+
+-u or --unmask : 
 Data output:
 
 The program will create a new "MLVA" directory with two subdirectories 
