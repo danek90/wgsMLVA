@@ -1,8 +1,8 @@
-whole genome sequence MLVA Program (wgsMLVA) version 1.0
+### whole genome sequence MLVA Program (wgsMLVA) version 1.0
 Created by Dane Kania
 03/13/2018
 
----What is this?---
+#### ---What is this?---
 
 The whole genome sequence Multiple Locus Variable Number Tandem Repeat Program 
 (wgsMLVA) aims to recreate PCR-based MLVA typing using closed Bordetella 
@@ -10,7 +10,7 @@ pertussis genomes. It is currently limited to closed B. pertussis genomes
 with future plans to expand to draft genomes.
 
 
----How does it work?---
+#### ---How does it work?---
 
 The program identifies six primer sites, labeled Variable Number Tandem Repeat 
 (VNTR) sites, that each hold a set number of repeats. Each VNTR site has a 
@@ -30,7 +30,7 @@ MLVA type = [VNTR1, VNTR3a, VNTR3b, VNTR4, VNTR5, VNTR6]
 27 = [8, 7, 0, 7, 6, 7]
 
 
----How do I run wgsMLVA?---
+#### ---How do I run wgsMLVA?---
 
 Example: 
 
@@ -67,7 +67,7 @@ output data is in "MLVA data" and raw sequence information for each VNTR
 site is stored in "sequence data"
 
  
----Caveats and future work---
+#### ---Caveats and future work---
 
 Traditional PCR MLVA is a less accurate than wgsMLVA. It estimates the number 
 of repeats in each VNTR site by molecular weight, with larger PCR products 
@@ -115,6 +115,7 @@ and two with two SNPs at base pair 13 and 15. They also exist in between the
 wild type repeats, giving some crediblity to this hypothesis. 
 
 >H564_VNTR1 
+<<<<<<< HEAD
 CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*TC CTGCTTGGCGGGTTC 
 CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*T*G* CTGCTTGGCGGG*C*T*G*
 
@@ -127,3 +128,8 @@ include them, it may just be a coincidence. However, this program is confirmed
 on 345 closed genomes with corrisponding PCR MLVA data and has a 100% 
 confirmation rate. This possiblility of repeat mutation should be considered 
 going forward.
+=======
+CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*TC CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*T*G* CTGCTTGGCGGG*C*T*G*
+
+While not confirmable, this has been the case in almost all VNTR1's tested with this program. This may be one area where a length based method is better than an exact match, as the specificity of the repeats are not required. while fact that the length of the fragment produces the same VNTR repeat count as my method of including these mutant repeats makes for a compelling arguement to include them, it may just be a coincidence. However, this program is confirmed on 345 closed genomes with corrisponding PCR MLVA data and has a 100% confirmation rate. This possiblility of repeat mutation should be considered going forward.
+>>>>>>> e33a197c015551c2ce7b6e73a9978fa713669f7e
