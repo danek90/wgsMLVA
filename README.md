@@ -31,7 +31,7 @@ Dependencies:
 python 2.7 is needed to run.
 
 wgsMLVA arguments:
-'''bash
+```
 -h or --help : list of arguments
 		Prints out list of command line arguments.
 
@@ -50,7 +50,7 @@ wgsMLVA arguments:
 
 -u or --unmask : Removes VNTR3b masking, shows actual repeat value.
 		See README for more details.
-'''
+```
 
 Data output:
 
