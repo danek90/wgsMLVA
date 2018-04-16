@@ -11,7 +11,8 @@ The whole genome sequence Multiple Locus Variable Number Tandem Repeat Program (
 
 The program identifies six primer sites, labeled Variable Number Tandem Repeat (VNTR) sites, that each hold a set number of repeats. Each VNTR site has a unique, repeated DNA element that is counted by the program. This is done with all six VNTR sites, creating a list, similar to a barcode. wgsMLVA compares the specific list of VNTR counts to a database of possible MLVA types (included in this git page as MLVAdatabase.txt) and prints out the corrisponding MLVA type. 
 
-The primers were developed by [Schouls et alia 2004](https://www.ncbi.nlm.nih.gov/pubmed/15292152)
+The primers were developed by [Schouls et alia 2004](https://www.ncbi.nlm.nih.gov/pubmed/15292152).
+
 The database was used in this program was downloaded and based on the [mlva.net](https://www.mlva.net/bpertussis/default.asp) database.
 
 examples MLVA type and VNTR count list:
