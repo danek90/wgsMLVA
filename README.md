@@ -86,8 +86,3 @@ CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*TC CTGCTTGGCGGGTTC
 CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*T*G* CTGCTTGGCGGG*C*T*G*
 
 While not confirmable, this has been the case in almost all VNTR1's tested with this program. This may be one area where a length based method is better than an exact match, as the specificity of the repeats are not required. while fact that the length of the fragment produces the same VNTR repeat count as my method of including these mutant repeats makes for a compelling arguement to include them, it may just be a coincidence. However, this program is confirmed on 345 closed genomes with corrisponding PCR MLVA data and has a 100% confirmation rate. This possiblility of repeat mutation should be considered going forward.
-
-=======
-CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*TC CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*T*G* CTGCTTGGCGGG*C*T*G*
-
-While not confirmable, this has been the case in almost all VNTR1's tested with this program. This may be one area where a length based method is better than an exact match, as the specificity of the repeats are not required. while fact that the length of the fragment produces the same VNTR repeat count as my method of including these mutant repeats makes for a compelling arguement to include them, it may just be a coincidence. However, this program is confirmed on 345 closed genomes with corrisponding PCR MLVA data and has a 100% confirmation rate. This possiblility of repeat mutation should be considered going forward.
