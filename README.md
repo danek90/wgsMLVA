@@ -23,9 +23,9 @@ MLVA type = [VNTR1, VNTR3a, VNTR3b, VNTR4, VNTR5, VNTR6]
 #### ---How do I run wgsMLVA?---
 
 Example: 
-
+```
 python wgsMLVA.py [other arguments] -i [input fasta file] -o [output directory]
-
+```
 Dependencies:
 
 python 2.7 is needed to run.
