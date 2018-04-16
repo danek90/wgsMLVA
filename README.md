@@ -81,7 +81,6 @@ CGGACGGATCTTCTGGAAGCCTTCGACCACCACCACGTCTCCCGCCGCCAGG
 Type 27's VNTR1 has 8 repeats. When looking for VNTR1's repeat monomer (CTGCTTGGCGGGTTC) in isolate H564, there are only 5 exact matches. This issue exists across almost all tested samples. In order to get to 8, I hypothesize that there are repeat mutants that exist in the fragment. When I lower the stringency, I find the three other repeats, one with one SNP at base pair 13 and two with two SNPs at base pair 13 and 15. They also exist in between the wild type repeats, giving some crediblity to this hypothesis. 
 
 >H564_VNTR1 
-<<<<<<< HEAD
 CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*TC CTGCTTGGCGGGTTC 
 CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC CTGCTTGGCGGG*C*T*G* CTGCTTGGCGGG*C*T*G*
 
