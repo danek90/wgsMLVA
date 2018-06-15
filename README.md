@@ -78,11 +78,7 @@ AAAATTGCGGCATGTGGGCTGACTCTGAAAGCGATGCTCACGAAAAGGGAACGCGGCGCCGTCGGGCGCCGCGCGCCGCT
 
 Type 27's VNTR1 has 8 repeats. When looking for VNTR1's repeat monomer (CTGCTTGGCGGGTTC), there are only 5 exact matches. In order to get to 8, I hypothesize that there are repeat mutants that exist in the fragment. When I lower the stringency, I find the three other repeats, one with one SNP at base pair 13 and two with two SNPs at base pair 13 and 15. They also exist in between the wild type repeats (repeats 3 and 8), giving some crediblity to this hypothesis. 
 
->VNTR1 - Repeat variataion
-CTGCTTGGCGGGTTC CTGCTTGGCGGGTTC
-
-CTGCTTGGCGGG**C**TC CTGCTTGGCGGGTTC
-
-CTGCTTGGCGGG**C**T**G** CTGCTTGGCGGG**C**T**G**
+>VNTR1-repeat_variation
+CTGCTTGGCGGGTTC  CTGCTTGGCGGGTTC  CTGCTTGGCGGG**C**TC  CTGCTTGGCGGGTTC  CTGCTTGGCGGG**C**T**G**  CTGCTTGGCGGG**C**T**G**
 
 While not confirmable, this has been the case in all VNTR1's tested with this program (over 500 closed and draft genomes). This may be one area where a length based method is better than an exact match, as the specificity of the repeats are not required. While the fact that the length of the fragment produces the same VNTR repeat count as my method of including these mutant repeats makes for a compelling arguement to include them, it may just be a coincidence. However, this program is confirmed on 464 closed genomes with corrisponding PCR MLVA data and has a 100% confirmation rate. This possiblility of repeat mutation should be considered going forward.
