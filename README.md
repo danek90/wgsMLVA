@@ -1,10 +1,10 @@
 ## whole genome sequence MLVA Program (wgsMLVA) version 1.0
 Created by Dane Kania
-03--2018
+06-14-2018
 
 ### ---What is this?---
 
-The whole genome sequence Multiple Locus Variable Number Tandem Repeat Program (wgsMLVA) aims to recreate PCR-based MLVA typing using closed Bordetella pertussis genomes. It is currently limited to closed B. pertussis genomes with future plans to expand to draft genomes.
+The whole genome sequence Multiple Locus Variable Number Tandem Repeat Program (wgsMLVA) aims to recreate PCR-based MLVA typing using closed *Bordetella pertussis* genomes. It is currently limited to closed B. pertussis genomes with future plans to expand to draft genomes.
 
 
 ### ---How does it work?---
@@ -49,7 +49,7 @@ wgsMLVA arguments:
 
 Data output:
 
-The program will create a new "MLVA" directory with two subdirectories ("MLVA data" and "sequence data") and onesummary file (summary.txt). MLVA output data is in "MLVA data" and raw sequence information for each VNTRsite is stored in "sequence data".
+The program will create a new "MLVA" directory with two subdirectories ("MLVA_data" and "sequence_data") and onesummary file (summary.txt). MLVA output data is in "MLVA_data" and raw sequence information for each VNTRsite is stored in "sequence data".
 
 examples MLVA type and VNTR count list output:
 
@@ -65,7 +65,9 @@ Traditional PCR MLVA is a less accurate than wgsMLVA. It estimates the number of
 
 In the example lists above you may notice there are two VNTR3's. This is because VNTR3 has a chance to duplciate in the genome. These duplications can also have different numbers of repeat monomers too. However, because PCR MLVA relys on molecular weight and gel electrophoresus to esitmate the VNTR fragments there is no easy way to distinguish the VNTR3 duplications unless they are drastically different in size (eg. different number of repeats). wgsMLVA does not have this problem and can identify both VNTR3 fragments every time.
 
-This produces an discrpency moving forward with wgsMLVA. wgsMLVA can literally produce more accurate data, but the data conflicts with standardized B. pertussis MLVA nomenclature. Currently, the program ignores this extra information. If the program finds a duplicate and they both have the same repeat count, the duplicate is changed to a zero (exactly how PCR MLVA works). Further work should be done to strengthen this argument too. An argument may be added in the program, -u or --unmask, which removes this, createing a more "real" MLVA type that accounts for 2 VNTR3's of the same length. Currently, this is not used because it would dratically change how the typing system works, so until these two schemes can be reconciled, we will continue to use the standard MLVA typing system.
+This produces an discrpency moving forward with wgsMLVA. wgsMLVA can literally produce more accurate data, but the data conflicts with standardized B. pertussis MLVA nomenclature. Currently, the program ignores this extra information. If the program finds a duplicate and they both have the same repeat count, the duplicate is changed to a zero (exactly how PCR MLVA works). Further work should be done to strengthen this argument too. 
+
+An argument may be added in the program, -u or --unmask, which removes this, createing a more "real" MLVA type that accounts for 2 VNTR3's of the same length. Currently, this is not used because it would dratically change how the typing system works, so until these two schemes can be reconciled, the program will continue to use the standard MLVA typing system.
 
 #### II. Variability in repeats.
 
